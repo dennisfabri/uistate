@@ -1,4 +1,4 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
 import java.awt.Component;
 import java.awt.Frame;

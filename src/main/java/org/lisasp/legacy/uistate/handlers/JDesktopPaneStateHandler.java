@@ -1,13 +1,19 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
 import java.awt.Component;
-import java.awt.event.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.awt.event.ContainerEvent;
+import java.awt.event.ContainerListener;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
 import java.util.Arrays;
 import java.util.prefs.Preferences;
 
-import javax.swing.*;
+import javax.swing.JDesktopPane;
+import javax.swing.JInternalFrame;
 
-import de.df.uistate.UIStateManager;
+import org.lisasp.legacy.uistate.UIStateManager;
 
 public class JDesktopPaneStateHandler extends AbstractStateHandler {
     private static final class DesktopListener implements ContainerListener, HierarchyListener, ComponentListener {

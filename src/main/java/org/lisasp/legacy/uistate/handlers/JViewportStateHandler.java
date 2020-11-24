@@ -1,8 +1,9 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
 import java.awt.Component;
 import java.awt.Point;
 import java.util.prefs.Preferences;
+
 import javax.swing.JViewport;
 
 public class JViewportStateHandler extends AbstractStateHandler {

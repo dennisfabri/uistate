@@ -1,7 +1,8 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
-import de.df.uistate.UIStateHandler;
 import java.awt.Component;
+
+import org.lisasp.legacy.uistate.UIStateHandler;
 
 public abstract class AbstractStateHandler implements UIStateHandler {
 

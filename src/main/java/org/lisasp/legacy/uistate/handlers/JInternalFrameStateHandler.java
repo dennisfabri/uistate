@@ -1,9 +1,10 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
 import java.awt.Component;
 import java.awt.Rectangle;
 import java.beans.PropertyVetoException;
 import java.util.prefs.Preferences;
+
 import javax.swing.JInternalFrame;
 
 public class JInternalFrameStateHandler extends AbstractStateHandler {

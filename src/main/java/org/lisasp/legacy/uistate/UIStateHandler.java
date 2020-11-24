@@ -1,4 +1,4 @@
-package de.df.uistate;
+package org.lisasp.legacy.uistate;
 
 import java.awt.Component;
 import java.util.prefs.Preferences;

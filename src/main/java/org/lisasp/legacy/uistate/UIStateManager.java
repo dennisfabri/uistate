@@ -1,14 +1,32 @@
-package de.df.uistate;
+package org.lisasp.legacy.uistate;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Window;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.prefs.Preferences;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JInternalFrame;
+import javax.swing.RootPaneContainer;
 
-import de.df.uistate.handlers.*;
+import org.lisasp.legacy.uistate.handlers.JDesktopPaneStateHandler;
+import org.lisasp.legacy.uistate.handlers.JInternalFrameStateHandler;
+import org.lisasp.legacy.uistate.handlers.JListStateHandler;
+import org.lisasp.legacy.uistate.handlers.JSplitPaneStateHandler;
+import org.lisasp.legacy.uistate.handlers.JTabbedPaneStateHandler;
+import org.lisasp.legacy.uistate.handlers.JTableStateHandler;
+import org.lisasp.legacy.uistate.handlers.JTreeStateHandler;
+import org.lisasp.legacy.uistate.handlers.JViewportStateHandler;
+import org.lisasp.legacy.uistate.handlers.WindowStateHandler;
 
 public class UIStateManager {
     private static final class ClosingListener extends WindowAdapter {
@@ -23,17 +41,17 @@ public class UIStateManager {
         }
     }
 
-    private static final ClosingListener               CLOSING_LISTENER = new ClosingListener();
+    private static final ClosingListener CLOSING_LISTENER = new ClosingListener();
 
-    private static Map<Class<?>, List<UIStateHandler>> _handlers        = new HashMap<>();
-    private static List<UIStateHandler>                _defaultHandlers = new ArrayList<>(Arrays.asList(
+    private static Map<Class<?>, List<UIStateHandler>> _handlers = new HashMap<>();
+    private static List<UIStateHandler> _defaultHandlers = new ArrayList<>(Arrays.asList(
             new UIStateHandler[] { new WindowStateHandler(), new JSplitPaneStateHandler(), new JViewportStateHandler(),
                     new JTreeStateHandler(), new JListStateHandler(), new JTableStateHandler(),
                     new JTabbedPaneStateHandler(), new JDesktopPaneStateHandler(), new JInternalFrameStateHandler() }));
 
-    private static boolean                             _initialized;
+    private static boolean _initialized;
 
-    private static Preferences                         _prefs;
+    private static Preferences _prefs;
 
     private static void init() {
         if (!_initialized) {

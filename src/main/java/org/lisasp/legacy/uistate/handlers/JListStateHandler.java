@@ -1,7 +1,8 @@
-package de.df.uistate.handlers;
+package org.lisasp.legacy.uistate.handlers;
 
 import java.awt.Component;
 import java.util.prefs.Preferences;
+
 import javax.swing.JList;
 
 public class JListStateHandler extends AbstractStateHandler {
